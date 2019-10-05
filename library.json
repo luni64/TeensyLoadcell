@@ -1,0 +1,21 @@
+{
+  "name": "TeensyLoadCell",
+  "keywords": "teensy, teensy3.2, load cell, adc, differential adc",
+  "description": "Read out load cells with the differential ADC of a T3.2",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/luni64/TeensyLoadCell"
+  },
+  "authors":
+  {
+    "name": "Lutz Niggl",
+    "email": "lutz.niggl@lunoptics.com",
+    "url": "https://github.com/luni64",
+    "maintainer": true
+  },
+  "homepage": "https://github.com/luni64/TeensyLoadCell",
+  "version": "0.0.1",
+  "frameworks": "arduino",
+  "platforms": "Teensy"
+}
