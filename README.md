@@ -1,6 +1,6 @@
 # TeensyLoadcell
 Direct load cell readout with a [Teensy
-3.2](https://www.pjrc.com/teensy/teensy31.html]) Arduino controller board.
+3.2](https://www.pjrc.com/teensy/teensy31.html) Arduino controller board.
 
 ## Purpose of the Library
 The MK20DX256 processor of the Teensy 3.2 includes an on chip differential ADC
