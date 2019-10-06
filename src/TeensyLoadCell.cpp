@@ -55,8 +55,7 @@ namespace TeensyLoadcell
 
    void Loadcell::start()
    {
-      average = 0.0f;
-      adc->startSingleDifferential(pinP, pinN);
+
 
       // attach correct ISR depending on ADC module number
       if (adc->ADC_num == 0)
@@ -69,7 +68,10 @@ namespace TeensyLoadcell
          activeLCO[1] = this;
          attachInterruptVector(IRQ_ADC1, Loadcell_ISR<1>);
       }
+      average = 0.0f;
 
+      adc->stopPDB();
+      adc->startSingleDifferential(pinP, pinN);
       adc->enableInterrupts();
       adc->startPDB(sampleFreq);
    }
@@ -99,10 +101,9 @@ namespace TeensyLoadcell
 
    //-----------------------------------------------------------------
 
-   void Loadcell::setCalib(float c0, float c1)
+   void Loadcell::tare()
    {
-      this->c0 = c0;
-      this->c1 = c1;
+      c0 = average;
    }
 
 } // namespace TeensyLoadcell

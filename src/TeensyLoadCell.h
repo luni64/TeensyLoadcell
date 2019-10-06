@@ -29,13 +29,17 @@ namespace TeensyLoadcell
       void stop();
 
       /* Gets the averaged, calibrated value. Calibration coefficients can be set by setCalib(c0, c1) */
-      inline float getValue() { return c0 + c1 * average; }
+      inline float getValue() { return (average - c0) * c1; }
 
       // set the smoothing time constant in seconds. Values will be stable after about 5* tau.
       void setTau(float tau);
 
-      // set the calibration factors. getValue() returns c0 + c1 * average. Defaults to c0 = 0; c1 = 1
-      void setCalib(float c0, float c1);
+
+      // tares the load cell (sets c0 such that getValue() returns 0 )
+      void tare();
+
+      // calibration factors. getValue() returns "(average-c0) * c1"
+      float c0 = 0.0f, c1 = 1.0f;
 
       // delete copy constructor
       Loadcell(const Loadcell &) = delete;
@@ -47,7 +51,7 @@ namespace TeensyLoadcell
 
       float alpha;                     // smoothing factor
       unsigned sampleFreq;             // used sample frequency for the PDB
-      float c0 = 0.0f, c1 = 1.0f;      // calibration coefficients
+
 
       template<unsigned n> friend void Loadcell_ISR(); // let the ADC ISR update the measurement value (average)
    };
