@@ -55,6 +55,7 @@ This example shows how to implement a simple balance with TeensyLoadcell. It is
 not super precise but works nicely.
 
 Here a quick video showing the balance in action: 
+
 [![Watch the video](https://img.youtube.com/vi/ls3YLmw5UEo/0.jpg)](https://youtu.be/ls3YLmw5UEo)
 
 ```
