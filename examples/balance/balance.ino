@@ -1,5 +1,4 @@
-#include "Arduino.h"
-#include "TeensyLoadCell.h"
+#include <TeensyLoadcell.h>
 
 using namespace TeensyLoadcell;
 
