@@ -58,7 +58,7 @@ Here a quick video showing the balance in action:
 
 [![Watch the video](https://img.youtube.com/vi/ls3YLmw5UEo/0.jpg)](https://youtu.be/ls3YLmw5UEo)
 
-```
+```c++
 #include "Arduino.h"
 #include "TeensyLoadCell.h"
 
